@@ -1,49 +1,79 @@
+// SALUDO DE BIENVENIDA
+
 alert ("¡Gracias por tu interés en saber más sobre el idioma Japonés!");
 alert ("Para poder generar un plan de estudios personalizado deberás completar la siguiente información");
-let nYa = prompt ("Indicá tu nombre y apellido").toUpperCase();
+
+// UTILIZACION DE FUNCTION PARA SALUDA
+
 function saludar (nYa){
     if (nYa != undefined) {
-        alert ("Hola" + nYa);
+        alert ("¡Hola " + nYa + "!");
     } else {
         alert ("Hola persona sin nombre");
     }
 }
-alert ("Gracias por interesarte en nuestra oferta de cursos de idioma " + nYa);
+let nYa = prompt ("Indicá tu nombre y apellido").toUpperCase();
+saludar (nYa);
+alert ("Gracias por interesarte en nuestra oferta de cursos de idioma");
+
+// UTILIZACION DE WHILE PARA VERIFICAR LA EDAD
+
 let e = prompt ("Indicá tu edad");
-    if (e <= 6) {
-        alert ("La edad mínima para comenzar a estudiar es de 7 años");
-    }
-    console.log ("SE TERMINO");
-let z = prompt ("¿Tu lugar de residencia es CABA, AMBA o interior del país?").toUpperCase();
+while (e > 7){
+    console.log("su edad es de " + e);
+        alert ("¡Perfecto! Tenemos planes de estudio para la edad que nos indicas.");
+
+//  UTILIZACION DE SWITCH PARA IDENTIFICAR LA ZONA
+
+        let z = prompt ("¿Tu zona de residencia es AMBA o interior del país?").toUpperCase();
     switch (z) {
-        case "CABA":
-            console.log ("Tenemos sedes en CABA");
-            alert ("Tenemos sedes en CABA");
-            break;
         case "AMBA":
-            console.log ("Tenemos sedes en AMBA");
-            alert ("Tenemos sedes en AMBA");
+            console.log ("si en AMBA");
+            alert ("Nuestras sedes de AMBA son en Capital Federal y Zona Oeste.");
+
+//  UTILIZACION DE FOR PARA IDENTIFICAR EL TIPO DE CURSO
+
+            for (tipoCurso = 0; tipoCurso < 4; tipoCurso ++) {
+                let tipoCurso = Number(prompt ("Contamos con las siguientes opciones: 1) curso individual - 2) paquete de 2 cursos - 3) paquete de 3 cursos. Elejí la opción que más te guste."));
+                if (tipoCurso === 1) {
+                    console.log ("si curso individual");
+                    alert ("El valor de curso individual es de $...");
+                    break;
+                } else if (tipoCurso === 2) {
+                    console.log ("si pack 2 cursos");
+                    alert ("El valor del paquete de dos cursos es de $...");
+                    break;
+                } else if (tipoCurso === 3) {
+                    console.log ("si pack 3 cursos");
+                    alert ("El valor del paquete de tres cursos es de $...");
+                    break;
+                } else if (tipoCurso >= 4) {
+                    console.log("no cursos");
+                    alert ("Por el momento no contamos con paquetes de más de 3 cursos.");
+                    break;
+                } else if (tipoCurso === 0){
+                    console.log("nulo");
+                    alert ("No ha seleccionado ningún curso.");
+                    break;
+                }}
+            break;
         default:
-            console.log ("Lamentablemente, por el momento no contamos con sedes en el interior del país.");
+            console.log ("no sedes");
             alert ("Lamentablemente, por el momento no contamos con sedes en el interior del país.");
     }
-    let tipoCurso = prompt ("Contamos con cursos individuales o pack de 3 y 2 cursos. ¿Con cual te gustaría comenzar?").toUpperCase();
-    switch (tipoCurso) {
-        case "PACK DE 3":
-            console.log ("El valor del pack de 3 cursos es de ...");
-            alert ("El valor del pack de 3 cursos es de ...");
-            break;
-        case "PACK DE 2":
-            console.log ("El valor del pack de 2 cursos es de ...");
-            alert ("El valor del pack de 2 cursos es de ...");
-            break;
-        case "CURSO INDIVIDUAL":
-            console.log ("El valor de curso individual es de ...");
-            alert ("El valor de curso individual es de ...");
-        default:
-            console.log ("Aún no seleccionaste ningún curso");
-            alert ("Aún no seleccionaste ningún curso");
-    }
+    e--;
+    break;
+}
+console.log("Fin del while");
+if (e <=7) {
+    alert ("La edad mínima para comenzar a estudiar Japonés con nosotros es de 8 años.");
+ }
+
+
+
+
+
+
 
 
 
